@@ -1,0 +1,388 @@
+---
+// ContactForm.astro
+---
+
+<section class="w-full">  
+  <form id="contact-form" method="POST" action="/api/register" class="space-y-5">
+    <h3 class="text-xl font-bold pb-4">Register Here</h3>
+    <!-- First Name -->
+    <div class="space-y-1 mb-6">
+      <label for="first-name" class="block text-sm font-medium text-gray-700">
+        First Name <span class="text-red-500">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="first-name" 
+        name="firstName" 
+        required
+        class="w-full bg-white px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+        placeholder="John"
+      />
+      <div class="error-message text-red-500 text-xs hidden" data-for="firstName"></div>
+    </div>
+
+    <!-- Last Name -->
+    <div class="space-y-1 mb-6">
+      <label for="last-name" class="block text-sm font-medium text-gray-700">
+        Last Name <span class="text-red-500">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="last-name" 
+        name="lastName" 
+        required
+        class="w-full bg-white px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+        placeholder="Doe"
+      />
+      <div class="error-message text-red-500 text-xs hidden" data-for="lastName"></div>
+    </div>
+
+    <!-- Company Name -->
+    <div class="space-y-1 mb-6">
+      <label for="company-name" class="block text-sm font-medium text-gray-700">
+        Company Name <span class="text-red-500">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="company-name" 
+        name="companyName" 
+        required
+        class="w-full bg-white px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+        placeholder="Acme Inc."
+      />
+      <div class="error-message text-red-500 text-xs hidden" data-for="companyName"></div>
+    </div>
+
+    <!-- Job Title -->
+    <div class="space-y-1 mb-6">
+      <label for="job-title" class="block text-sm font-medium text-gray-700">
+        Job Title <span class="text-red-500">*</span>
+      </label>
+      <input 
+        type="text" 
+        id="job-title" 
+        name="jobTitle" 
+        required
+        class="w-full bg-white px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+        placeholder="Software Engineer"
+      />
+      <div class="error-message text-red-500 text-xs hidden" data-for="jobTitle"></div>
+    </div>
+
+    <!-- Work Email -->
+    <div class="space-y-1 mb-6">
+      <label for="work-email" class="block text-sm font-medium text-gray-700">
+        Work Email <span class="text-red-500">*</span>
+      </label>
+      <input 
+        type="email" 
+        id="work-email" 
+        name="workEmail" 
+        required
+        class="w-full bg-white px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+        placeholder="john.doe@acme.com"
+      />
+      <div class="error-message text-red-500 text-xs hidden" data-for="workEmail"></div>
+    </div>
+
+    <!-- Phone with Area Code Selector -->
+    <div class="space-y-1 mb-6">
+      <label class="block text-sm font-medium text-gray-700 mb-1">
+        Phone <span class="text-red-500">*</span>
+      </label>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <select 
+          id="area-code" 
+          name="areaCode" 
+          required
+          class="sm:w-32 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition bg-white"
+        >
+          <option value="">+65 (SG)</option>
+          <option value="+60">+60 (MY)</option>
+          <option value="+62">+62 (ID)</option>
+          <option value="+63">+63 (PH)</option>
+          <option value="+66">+66 (TH)</option>
+          <option value="+84">+84 (VN)</option>
+          <option value="+86">+86 (CN)</option>
+          <option value="+852">+852 (HK)</option>
+          <option value="+61">+61 (AU)</option>
+          <option value="+64">+64 (NZ)</option>
+          <option value="+91">+91 (IN)</option>
+          <option value="+81">+81 (JP)</option>
+          <option value="+82">+82 (KR)</option>
+          <option value="+1">+1 (US/CA)</option>
+          <option value="+44">+44 (UK)</option>
+        </select>
+        <input 
+          type="tel" 
+          id="phone-number" 
+          name="phoneNumber" 
+          required
+          class="bg-white flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+          placeholder="Enter phone number"
+        />
+      </div>
+      <div class="error-message text-red-500 text-xs hidden" data-for="phone"></div>
+    </div>
+
+    <!-- Opt-In Checkbox -->
+    <div class="space-y-2 pt-2 mb-8">
+      <label class="flex items-start gap-3 cursor-pointer">
+        <input 
+          type="checkbox" 
+          id="opt-in" 
+          name="optIn" 
+          required
+          class="mt-0.5 w-4 h-4 text-blue-600 border-gray-300 rounded focus:ring-blue-500 cursor-pointer"
+        />
+        <span class="text-sm text-gray-700">
+          <span class="text-red-500">*</span> By checking this box, you agree to be contacted via phone and email regarding your interest in our products and services. We will treat your data in accordance with our privacy policy.
+        </span>
+      </label>
+      <div class="error-message text-red-500 text-xs hidden" data-for="optIn"></div>
+    </div>
+
+    <!-- Submit Button -->
+    <button 
+      type="submit" 
+      id="submit-btn"
+      class="bg-black hover:bg-transparent text-white hover:text-black border-2 border-black hover:border-2 border-black font-semibold py-2 px-6 rounded-lg transition duration-200 ease-in-out transform hover:scale-[1.01] focus:outline-none focus:ring-4 focus:ring-gray-500 mb-0 cursor-pointer"
+    >
+      Register Now
+    </button>
+
+    <!-- Form Status Message -->
+    <div id="form-status" class="text-center text-sm hidden"></div>
+  </form>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form') as HTMLFormElement | null;
+    const formStatus = document.getElementById('form-status') as HTMLDivElement | null;
+    
+    if (!form) return;
+    
+    // Clear all error messages
+    function clearErrors(): void {
+      const errorMessages = document.querySelectorAll('.error-message');
+      errorMessages.forEach(el => {
+        el.classList.add('hidden');
+        el.textContent = '';
+      });
+      
+      const inputs = document.querySelectorAll('input, select');
+      inputs.forEach(el => {
+        el.classList.remove('border-red-500');
+      });
+    }
+    
+    // Show error for a specific field
+    function showError(fieldName: string, message: string): void {
+      const errorEl = document.querySelector(`.error-message[data-for="${fieldName}"]`) as HTMLDivElement | null;
+      if (errorEl) {
+        errorEl.textContent = message;
+        errorEl.classList.remove('hidden');
+      }
+      
+      // Highlight the problematic input
+      if (fieldName === 'phone') {
+        const areaCode = document.getElementById('area-code') as HTMLSelectElement | null;
+        const phoneNum = document.getElementById('phone-number') as HTMLInputElement | null;
+        if (areaCode) areaCode.classList.add('border-red-500');
+        if (phoneNum) phoneNum.classList.add('border-red-500');
+      } else if (fieldName === 'optIn') {
+        const checkbox = document.getElementById('opt-in') as HTMLInputElement | null;
+        if (checkbox) checkbox.classList.add('border-red-500');
+      } else {
+        const input = document.querySelector(`[name="${fieldName}"]`) as HTMLInputElement | null;
+        if (input) input.classList.add('border-red-500');
+      }
+    }
+    
+    // Validate all fields
+    function validateForm(formData: FormData): boolean {
+      let isValid = true;
+      clearErrors();
+      
+      // First Name
+      const firstName = formData.get('firstName') as string | null;
+      if (!firstName?.trim()) {
+        showError('firstName', 'First name is required');
+        isValid = false;
+      }
+      
+      // Last Name
+      const lastName = formData.get('lastName') as string | null;
+      if (!lastName?.trim()) {
+        showError('lastName', 'Last name is required');
+        isValid = false;
+      }
+      
+      // Company Name
+      const companyName = formData.get('companyName') as string | null;
+      if (!companyName?.trim()) {
+        showError('companyName', 'Company name is required');
+        isValid = false;
+      }
+      
+      // Job Title
+      const jobTitle = formData.get('jobTitle') as string | null;
+      if (!jobTitle?.trim()) {
+        showError('jobTitle', 'Job title is required');
+        isValid = false;
+      }
+      
+      // Work Email
+      const workEmail = formData.get('workEmail') as string | null;
+      const emailRegex = /^[^\s@]+@([^\s@]+\.)+[^\s@]+$/;
+      if (!workEmail?.trim()) {
+        showError('workEmail', 'Work email is required');
+        isValid = false;
+      } else if (!emailRegex.test(workEmail)) {
+        showError('workEmail', 'Please enter a valid email address');
+        isValid = false;
+      }
+      
+      // Phone (area code + number)
+      const areaCode = formData.get('areaCode') as string | null;
+      const phoneNumber = formData.get('phoneNumber') as string | null;
+      if (!areaCode) {
+        showError('phone', 'Please select an area code');
+        isValid = false;
+      } else if (!phoneNumber?.trim()) {
+        showError('phone', 'Phone number is required');
+        isValid = false;
+      } else if (phoneNumber.trim().length < 5) {
+        showError('phone', 'Please enter a valid phone number');
+        isValid = false;
+      }
+      
+      // Opt-In Checkbox
+      const optIn = formData.get('optIn');
+      if (!optIn) {
+        showError('optIn', 'You must agree to be contacted to register');
+        isValid = false;
+      }
+      
+      return isValid;
+    }
+    
+    // Handle form submission
+    form.addEventListener('submit', async (e: Event) => {
+      e.preventDefault();
+      
+      const formData = new FormData(form);
+      
+      if (!validateForm(formData)) {
+        // Scroll to first error
+        const firstError = document.querySelector('.error-message:not(.hidden)');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+        return;
+      }
+      
+      // Disable submit button during submission
+      const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement | null;
+      if (!submitBtn) return;
+      
+      const originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting...';
+      submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+      
+      // Prepare data for API
+      const formDataObj = {
+        firstName: formData.get('firstName') as string,
+        lastName: formData.get('lastName') as string,
+        companyName: formData.get('companyName') as string,
+        jobTitle: formData.get('jobTitle') as string,
+        workEmail: formData.get('workEmail') as string,
+        areaCode: formData.get('areaCode') as string,
+        phoneNumber: formData.get('phoneNumber') as string,
+        optIn: formData.get('optIn') === 'on',
+      };
+      
+      try {
+        const response = await fetch('/api/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formDataObj),
+        });
+        
+        if (response.ok && formStatus) {
+          formStatus.className = 'text-center text-sm mt-4 p-3 bg-green-100 text-green-700 rounded-lg';
+          formStatus.textContent = '✓ Registration successful! We will contact you shortly.';
+          formStatus.classList.remove('hidden');
+          form.reset();
+        } else {
+          throw new Error('Registration failed');
+        }
+      } catch (error) {
+        console.error('Submission error:', error);
+        if (formStatus) {
+          formStatus.className = 'text-center text-sm mt-4 p-3 bg-red-100 text-red-700 rounded-lg';
+          formStatus.textContent = '❌ Submission failed. Please try again later.';
+          formStatus.classList.remove('hidden');
+        }
+      } finally {
+        // Re-enable submit button
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalText;
+        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        
+        // Auto-hide status message after 5 seconds
+        if (formStatus) {
+          setTimeout(() => {
+            formStatus.classList.add('hidden');
+          }, 5000);
+        }
+      }
+    });
+    
+    // Real-time validation as user types
+    const inputIds = ['first-name', 'last-name', 'company-name', 'job-title', 'work-email', 'phone-number'];
+    inputIds.forEach(id => {
+      const input = document.getElementById(id) as HTMLInputElement | null;
+      if (input) {
+        input.addEventListener('input', () => {
+          const fieldName = input.getAttribute('name');
+          if (fieldName) {
+            const errorEl = document.querySelector(`.error-message[data-for="${fieldName}"]`) as HTMLDivElement | null;
+            if (errorEl) {
+              errorEl.classList.add('hidden');
+            }
+          }
+          input.classList.remove('border-red-500');
+        });
+      }
+    });
+    
+    // Area code real-time validation
+    const areaCode = document.getElementById('area-code') as HTMLSelectElement | null;
+    if (areaCode) {
+      areaCode.addEventListener('change', () => {
+        const errorEl = document.querySelector(`.error-message[data-for="phone"]`) as HTMLDivElement | null;
+        if (errorEl && areaCode.value) {
+          errorEl.classList.add('hidden');
+          areaCode.classList.remove('border-red-500');
+        }
+      });
+    }
+    
+    // Checkbox real-time validation
+    const checkbox = document.getElementById('opt-in') as HTMLInputElement | null;
+    if (checkbox) {
+      checkbox.addEventListener('change', () => {
+        const errorEl = document.querySelector(`.error-message[data-for="optIn"]`) as HTMLDivElement | null;
+        if (errorEl && checkbox.checked) {
+          errorEl.classList.add('hidden');
+          checkbox.classList.remove('border-red-500');
+        }
+      });
+    }
+  });
+</script>

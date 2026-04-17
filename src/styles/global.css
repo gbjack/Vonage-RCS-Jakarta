@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-spezia: var(--font-spezia), sans-serif;
+}

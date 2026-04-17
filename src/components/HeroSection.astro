@@ -1,0 +1,56 @@
+---
+// HeroSection.astro
+---
+
+<section class="relative w-full h-[420px] md:h-[520px] lg:h-[620px] flex flex-col items-center justify-center bg-cover md:bg-center xl:bg-position-[center_bottom_-8rem] bg-no-repeat" style="background-image: url('src/assets/images/hero-bg.webp');">
+  
+  <!-- Black transparent overlay -->
+  <div class="absolute inset-0 bg-black/35"></div>
+
+  <!-- Nav logos -->
+  <div class="absolute top-0 left-0 right-0 w-full max-w-[1200px] mx-auto flex gap-4 md:gap-8 px-5 xl:px-0 mt-5">
+
+    <!-- Organiser -->
+    <div class="flex flex-col gap-2">
+      <span class="text-xs md:text-sm font-semibold text-white/80 uppercase tracking-wide">Organiser</span>
+      <img src="src/assets/images/Vonage_logo.svg" alt="Vonage" class="h-6 md:h-10 mt-2 md:mt-3" />
+    </div>
+  
+    <!-- Divider -->
+    <div class="h-16 md:h-22 w-[2px] bg-gradient-to-b from-transparent via-white to-transparent opacity-50"></div>
+  
+    <!-- Sponsors -->
+    <div class="flex flex-col gap-2">
+      <span class="text-xs md:text-sm font-semibold text-white/80 uppercase tracking-wide">Sponsors</span>
+      <div class="flex items-center gap-4">
+        <img src="src/assets/images/google-logo-transparent.webp" alt="Google" class="h-6 md:h-10" />
+        <img src="src/assets/images/Singtel_logo_reversed.webp" alt="SingTel" class="h-7 md:h-12.5 mb-2" />
+      </div>
+    </div>
+  </div>
+ 
+  
+  <!-- Content container -->
+  <div class="relative w-full max-w-[1200px] mx-auto text-white px-5 xl:px-0 flex flex-col justify-center mt-21 md:mt-27 h-full">
+    <h1 class="md:whitespace-pre-line text-lg md:text-4xl font-bold mb-6 leading-none">
+      <span class="mt-0">The Future of Messaging in APAC:</span> 
+      How RCS Will Transform Brand Engagement
+    </h1>
+    
+    <p class="text-4 md:text-[1.3rem] leading-none max-w-2xl mb-10 text-gray-100">
+      <span class="block mb-2">5th February 2026, 10am - 3pm</span>
+      <span class="whitespace-pre-line">
+        HighHouse Level 62
+        1 Raffles Place, L62,
+        Singapore 048616
+      </span>
+    </p>
+    
+    <div class="flex gap-4">
+      <a href="#contact-form" class="inline-block bg-transparent border border-white hover:bg-white hover:text-gray-900 transition-colors duration-300 font-semibold px-6 py-1.5 md:px-12 md:py-3 rounded-md md:rounded-lg text-sm md:text-lg">
+        Register Now
+      </a>
+    </div>
+  </div>
+
+</section>

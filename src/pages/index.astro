@@ -1,0 +1,186 @@
+---
+import Layout from '../layouts/Layout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Agenda from '../components/Agenda.astro';
+import SpeakerCard from '../components/SpeakerCard.astro';
+
+const speakers = [
+  {
+    name: "David Creasey-Benjamin",
+    title: "Strategic Account Manager",
+    company: "Vonage",
+	imageUrl: "src/assets/images/Speaker_DavidBenjamin.webp",
+	delay: 100,
+  },
+  {
+    name: "Mahendra Mane",
+    title: "Customer Solution Architect",
+    company: "Vonage",
+	imageUrl: "src/assets/images/Speaker_Mahendra.webp",
+	delay: 200,
+  },
+  {
+    name: "Tian Ung Ping",
+    title: "Associate Director",
+    company: "SingTel Singapore",
+	imageUrl: "src/assets/images/Speaker_TianUngPing.webp",
+	delay: 300,
+  },
+];
+---
+
+<Layout>
+	<HeroSection />
+	<div class="space-y-25 last-of-type:pb-25">
+		<section class="w-full px-6 md:px-8 pt-20 md:pt-25">
+			<div class="w-full max-w-[1200px] mx-auto flex flex-col lg:flex-row gap-8 md:gap-16">
+				<div class="basis-1/2">
+					<h2 class="text-2xl font-bold leading-tight mb-4 uppercase">
+						What you'll gain from this session
+					</h2>
+					<p class="text-normal mb-4">
+						This session is designed to give you clear, practical insight into how RCS is changing business messaging — and what it means for APAC in 2026.
+					</p>
+					<ul role="list" class="list-disc list-outside ml-6 mb-4">
+						<li>Understand how RCS is being adopted across the US, Europe, and leading global markets</li>
+						<li>See where APAC sits today, and what the next phase of rollout looks like</li>
+						<li>Gain clarity on timelines, operator readiness, and ecosystem progress</li>
+					</ul>
+					<h2 class="text-2xl font-bold leading-tight mb-4 mt-8">
+						See How Leading Brands Are Using RCS
+					</h2>
+					<ul role="list" class="list-disc list-outside ml-6 mb-4">
+						<li>Learn how enterprises are driving higher engagement and conversion with RCS</li>
+						<li>Understand how RCS compares to SMS, WhatsApp, and email</li>
+						<li>Explore high-impact use cases across retail, BFSI, travel, logistics, and eCommerce</li>
+					</ul>
+					<h2 class="text-2xl font-bold leading-tight mb-4 mt-8">
+						Experience RCS in Action
+					</h2>
+					<ul role="list" class="list-disc list-outside ml-6 mb-4">
+						<li>Watch a live RCS demo featuring rich media and branded messaging</li>
+						<li>See how verified senders and conversational journeys build trust</li>
+						<li>Explore AI-enabled customer interactions in the native messaging inbox</li>
+					</ul>
+					<h2 class="text-2xl font-bold leading-tight mb-4 mt-8">
+						Prepare for Commercialisation
+					</h2>
+					<ul role="list" class="list-disc list-outside ml-6 mb-4">
+						<li>Understand what it takes to launch RCS at scale in APAC</li>
+						<li>Learn how to integrate RCS into your existing marketing and CX stack</li>
+						<li>Take away practical inputs for your 2026 messaging roadmap</li>
+					</ul>
+					<h2 class="text-2xl font-bold leading-tight mb-4 mt-8">
+						Connect with Industry Experts
+					</h2>
+					<ul role="list" class="list-disc list-outside ml-6 mb-4">
+						<li>Hear directly from Vonage and Google</li>
+						<li>Connect with peers shaping the future of business messaging in APAC</li>
+					</ul>
+				</div>
+				<div class="basis-1/2">
+					<div class="bg-gray-200 rounded-lg">
+						<div class="px-4 py-10 md:px-8 md:py-12">
+							<ContactForm />
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="w-full px-6 md:px-8">
+			<div class="w-full max-w-[1200px] mx-auto">
+				<h2 class="text-2xl font-bold leading-tight mb-4 md:whitespace-pre-line">
+					Join us in Singapore for the first dedicated Vonage RCS 
+					(Rich Communication Services) event in APAC.
+				</h2>
+				<p class="text-normal mb-4">As business messaging continues to evolve, RCS is emerging as a powerful new channel for brands to deliver richer, more interactive customer experiences - directly within the native messaging app.</p>
+				<p class="text-normal mb-4">This invite-only, executive-level session brings together experts from Vonage and Google to share global perspectives, APAC readiness insights, and a live demonstration of RCS in action. Attendees will gain practical clarity on how RCS is shaping the future of customer engagement and what it means for their 2026 messaging roadmap.</p>
+				<h3 class="text-xl font-bold leading-tight pb-4 mt-8 md:whitespace-pre-line">
+					The Future of Messaging: How RCS Will Transform Brand Engagement in APAC
+				</h3>
+				<p class="text-normal mb-4">Messaging is entering a new era.</p>
+				<p class="text-normal mb-4">RCS is more than the evolution of SMS. It enables branded, interactive, and conversational experiences that combine the reach of messaging with the richness of app-like engagement.</p>
+				<p class="text-normal mb-4">With APAC entering a critical stage of RCS adoption, this session will help you understand where the market is heading and how to prepare for what's next.</p>
+			</div>
+		</section>
+
+		<section class="w-full px-6 md:px-8">
+			<div class="w-full max-w-[1200px] mx-auto text-center">
+				<h2 class="text-2xl font-bold leading-tight mb-4">
+					Outline Agenda
+				</h2>
+				<p class="text-normal">A structured day of insights, demos, and networking</p>
+				<p class="text-sm italic">Agenda is subject to change. Timings and sessions may be adjusted if necessary.</p>
+				 <Agenda />
+			</div>
+		</section>
+			
+		<section class="w-full px-6 md:px-8 bg-gray-100 py-25">
+			<div class="w-full max-w-[1200px] mx-auto text-center">
+				<h2 class="text-2xl font-bold leading-tight mb-4">
+					Outline Agenda
+				</h2>
+				<p class="text-normal">
+					Industry leaders sharing insights on the future of RCS messaging
+				</p>
+
+				<div class="py-10">        
+					<div class="flex flex-col lg:flex-row flex-wrap gap-8 justify-center items-center">
+					{speakers.map((speaker) => (
+						<SpeakerCard 
+							imageUrl={speaker.imageUrl}
+							name={speaker.name}
+							title={speaker.title}
+							company={speaker.company}
+						/>
+					))}
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="w-full px-6 md:px-8">
+			<div class="w-full max-w-[1200px] mx-auto text-center">
+				<h2 class="text-2xl font-bold leading-tight mb-4">
+					Venue
+				</h2>
+				<p class="text-xl font-bold">
+					<a href="https://highhouse.sg/" class="border-b-1 border-transparent hover:border-b-1 hover:border-black transition-all ease-out duration-300 ">HighHouse Level 62</a>
+				</p>
+				<p class="text-normal">
+					1 Raffles Place, L62, Singapore 048616
+				</p>
+				<div class="group grid grid-col-1 md:grid-cols-2 md:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-8 py-10 timeline-view animate-fade-in-up animate-range-gradual">
+					<div class="image-card hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-default">
+						<img class="w-full h-full object-cover rounded-2xl" src="/src/assets/images/vonage_rcs_image_venues_1.webp" alt="HighHouse 1">
+					</div>
+					<div class="image-card hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-default">
+						<img class="w-full h-full object-cover rounded-2xl" src="/src/assets/images/vonage_rcs_image_venues_2.webp" alt="HighHouse 2">
+					</div>
+					<div class="image-card hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-default">
+						<img class="w-full h-full object-cover rounded-2xl" src="/src/assets/images/vonage_rcs_image_venues_3.webp" alt="HighHouse 3">
+					</div>
+					<div class="image-card hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-default">
+						<img class="w-full h-full object-cover rounded-2xl" src="/src/assets/images/vonage_rcs_image_venues_4.webp" alt="HighHouse 4">
+					</div>
+					<div class="image-card hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-default">
+						<img class="w-full h-full object-cover rounded-2xl" src="/src/assets/images/vonage_rcs_image_venues_5.webp" alt="HighHouse 5">
+					</div>
+					<div class="image-card hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-default">
+						<img class="w-full h-full object-cover rounded-2xl" src="/src/assets/images/vonage_rcs_image_venues_6.webp" alt="HighHouse 6">
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer class="w-full px-6 md:px-8 bg-black">
+		<div class="w-full max-w-[1200px] mx-auto py-8 text-center flex justify-between">
+			<p class="text-xs text-white">© 2026 Vonage</p>
+			<p class="text-xs text-white">All rights reserved.</p>
+		</div>
+	</footer>
+</Layout>
+
+
