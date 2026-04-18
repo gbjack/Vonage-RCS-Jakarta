@@ -6,12 +6,12 @@ const company = Astro.props.company || "Vonage";
 const imageUrl = Astro.props.imageUrl || "https://placehold.co/400x400/2c3e50/ffffff?text=Speaker";
 ---
 
-<div class="speaker-card group w-full md:max-w-100 lg:max-w-74 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-default">
-  <div class="relative overflow-hidden bg-white py-10">
+<div class="speaker-card group w-full md:max-w-100 lg:max-w-74 bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 ease-out hover:scale-105 cursor-default" data-usal="fade-u delay-200 duratoin-800">
+  <div class="relative overflow-hidden bg-white py-10" data-usal="fade-u delay-300">
     <img src={imageUrl} alt={name} class="w-[192px] rounded-full aspect-square object-cover mx-auto transition-transform duration-300 ease-out group-hover:scale-105 hover:shadow-xl" />
   </div>
   
-  <div class="p-5 pb-6 bg-white">
+  <div class="p-5 pb-6 bg-white" data-usal="fade-u delay-400">
     <h3 class="font-spezia text-lg font-bold mb-1.5 tracking-tight">{name}</h3>
     <p class="font-spezia text-sm mb-2.5">{title}</p>
     <p class="font-spezia text-sm font-normal text-slate-700">{company}</p>
